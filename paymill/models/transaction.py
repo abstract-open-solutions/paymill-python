@@ -5,7 +5,7 @@ from .filter import Filter
 from .invoice import Invoice
 from .payment import Payment
 from .client import Client
-from .preauthorization import Preauthorization
+from .preauthorization import PreauthorizationLight
 from .fee import Fee
 __author__ = 'yalnazov'
 
@@ -48,7 +48,7 @@ class Transaction(JsonObject):
     client = ObjectProperty(Client)
     """:type Client object or None"""
 
-    preauthorization = ObjectProperty(Preauthorization)
+    preauthorization = ObjectProperty(PreauthorizationLight)
     """:type Preauthorization object or null"""
 
     created_at = IntegerProperty()

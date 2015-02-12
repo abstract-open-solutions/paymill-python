@@ -7,6 +7,39 @@ from jsonobject import *
 __author__ = 'yalnazov'
 
 
+class PreauthorizationLight(JsonObject):
+    id = StringProperty()
+    """:type str: Unique identifier of this preauthorization"""
+
+    description = StringProperty()
+    """:type str or None: Description for this preauthorization"""
+
+    amount = StringProperty()
+    """:type str: Formatted amount which will be reserved for further transactions"""
+
+    status = StringProperty()
+    """:type enum(open, pending, closed, failed, deleted, preauth):
+    Indicates the current status of this preauthorization"""
+
+    livemode = BooleanProperty()
+    """:type boolean: Whether this preauthorization was issued while being in live mode or not"""
+
+    payment = StringProperty()
+    """:type Payment id or None"""
+
+    client = StringProperty()
+    """:type Client id or None"""
+
+    created_at = IntegerProperty()
+    """:type int: Unix-Timestamp for the creation date."""
+
+    updated_at = IntegerProperty()
+    """:type int: Unix-Timestamp for the last update."""
+
+    app_id = StringProperty()
+    """:type str or None: App (ID) that created this refund or null if created by yourself."""
+
+
 class Preauthorization(JsonObject):
     id = StringProperty()
     """:type str: Unique identifier of this preauthorization"""
